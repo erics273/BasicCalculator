@@ -45,11 +45,44 @@ public class CalculatorApp {
         //store what action they chose from the menu
         String action = myScanner.nextLine();
 
+        //create some variables to store our results and our operator for the action chosen
+        int result = 0;
+        String operator = "";
+        //using some control flow login (if statements)
+        //to do something different based on the users menu choice
+
+        //if the action is "a" they chose to add
+        if( action.equalsIgnoreCase("a") ){
+
+            result = firstNum + secondNumber;
+            operator = "+";
+
+        }
+
+        if( action.equalsIgnoreCase("S") ){
+            result = firstNum - secondNumber;
+            operator = "-";
+        }
+
+        if( action.equalsIgnoreCase("M") ){
+            result = firstNum * secondNumber;
+            operator = "*";
+        }
+
+        if( action.equalsIgnoreCase("d") ){
+            System.out.println("The User Chose Divide");
+        }
+
+
         //do the math (in this case we will always multiply
-        int result = firstNum * secondNumber;
+        //int result = firstNum * secondNumber;
 
         //print the result
-        System.out.println(firstNum + " * " + secondNumber + " = " + result);
+        //this is with string concatenation
+        System.out.println(firstNum + " " + operator + " " + secondNumber + " = " + result);
+
+        //using formatted string with printf
+        System.out.printf("%d %s %d = %d", firstNum, operator, secondNumber, result);
 
     }
 }
